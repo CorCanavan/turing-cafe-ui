@@ -19,5 +19,10 @@
 }
 
 .resy-container {
-  width: 100%;
+  width: 90%;
+}
+
+.resy-form {
+  width: 80%;
+  padding-bottom: 10px;
 }
