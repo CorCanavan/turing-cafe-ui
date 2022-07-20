@@ -19,5 +19,20 @@ describe('Turing Cafe User Flows', () => {
   it('Should update form values to display user input', () => {
     cy.get('form').find('input[name="name"]').type('Corinne').should('have.value', 'Corinne')
     cy.get('form').find('input[name="date"]').type('07/20').should('have.value', '07/20')
+    cy.get('form').find('input[name="time"]').type('7:00').should('have.value', '7:00')
+    cy.get('form').find('input[name="number"]').type(2).should('have.value', '02')
+  })
+
+  it('Should be able to display new reservation card once user completes the form and clicks button', () => {
+    cy.get('form').find('input[name="name"]').type('Corinne')
+    cy.get('form').find('input[name="date"]').type('7/20')
+    cy.get('form').find('input[name="time"]').type('7:00')
+    cy.get('form').find('input[name="number"]').type(2)
+    cy.contains('Make A Reservation').click()
+    cy.get('.resContainer').find('.card').should('have.length', 10)
+    cy.get('.resContainer').find('.card').last().should('contain', 'Corinne')
+    cy.get('.resContainer').find('.card').last().should('contain', '7/20')
+    cy.get('.resContainer').find('.card').last().should('contain', '7:00')
+    cy.get('.resContainer').find('.card').last().should('contain', 2)
   })
 })
