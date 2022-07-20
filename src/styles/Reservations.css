@@ -1,0 +1,7 @@
+.resContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  grid-gap: 10px;
+  padding: 10px;
+}

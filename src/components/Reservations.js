@@ -16,7 +16,9 @@ const Reservations = ({ reservations }) => {
     )
   })
   return (
+    <div className='resContainer'>
     {reservationCards}
+    </div>
   )
 }
 
