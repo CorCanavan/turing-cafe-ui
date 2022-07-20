@@ -28,7 +28,7 @@ describe('Turing Cafe User Flows', () => {
     cy.get('form').find('input[name="date"]').type('7/20')
     cy.get('form').find('input[name="time"]').type('7:00')
     cy.get('form').find('input[name="number"]').type(2)
-    cy.contains('Make A Reservation').click()
+    cy.contains('Make Reservation').click()
     cy.get('.resContainer').find('.card').should('have.length', 10)
     cy.get('.resContainer').find('.card').last().should('contain', 'Corinne')
     cy.get('.resContainer').find('.card').last().should('contain', '7/20')
