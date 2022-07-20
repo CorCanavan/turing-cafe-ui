@@ -17,6 +17,18 @@ class Form extends Component {
     this.setState({ [name]: value })
   }
 
+  submitReservation = (event) => {
+    event.preventDefault();
+    const newReservation = {
+      id: Date.now(),
+      name: this.state.name,
+      date: this.state.date,
+      time: this.state.time,
+      number: this.state.number
+    }
+    this.props.addReservation(newReservation);
+  }
+
   render() {
     return (
       <form>
