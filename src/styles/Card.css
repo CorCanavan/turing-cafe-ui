@@ -11,3 +11,7 @@ button {
   background-color: teal;
   color: white;
 }
+
+.cancel {
+  width: 50%
+}
